@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class exeresice3 {
     public static void main (String[] args)
     {
-        int arr[] = {1,1,4,5,5,7,6};
+        int arr[] = {1,1,4,5,5,7};
         removeDuplicateElement(arr);
 }
         public static void removeDuplicateElement(int oldArray[])
