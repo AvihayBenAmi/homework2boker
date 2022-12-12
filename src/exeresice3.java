@@ -3,16 +3,15 @@ import java.util.Scanner;
 public class exeresice3 {
     public static void main (String[] args)
     {
-        int arr[] = {1,1,4,5,5,7};
+        int arr[] = {1,4,7,1,8,9,2,1,3,8,0}; //insert array
         removeDuplicateElement(arr);
 }
-        public static void removeDuplicateElement(int oldArray[])
-        {
+        public static void removeDuplicateElement(int oldArray[]) {
             int counter = 0;
-            for (int l = 0; l < oldArray.length; l++) {
-                for (int n = 0; n <+ l; n++) {
-                    if(l!=n){
-                        if (oldArray[n] == oldArray[l]) {
+            for (int i = 0; i < oldArray.length; i++) {
+                for (int j = 0; j <+ i; j++) {
+                    if(i!=j){
+                        if (oldArray[j] == oldArray[i]) {
                             counter++;
                             break;
                         }
