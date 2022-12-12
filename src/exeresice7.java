@@ -4,10 +4,14 @@ import java.util.Scanner;
 public class exeresice7 {
     public static void main(String[] args) {
         int[] generatedCode=new int[4];
+        int[] userGuessCode=new int[4];
         int routeNumbers=0;
+        boolean ifDouble=false;
         routeNumbers=routeSelection();
         generatedCode=lottery();
         userGuessCode(generatedCode);
+        System.out.println(ifDouble=ifDoubleinGuess(userGuessCode));
+
         }
     public static int[] lottery(){
         Random random=new Random();
@@ -36,11 +40,9 @@ public class exeresice7 {
         }
         }
         while(check==false);
-        //for(int i=0;i< code.length;i++){
-            //System.out.print(code[i]);}
         return code;
     }
-    public static void userGuessCode(int[] generatedCode) {
+    public static int[] userGuessCode(int[] generatedCode) {
         Scanner scanner=new Scanner(System.in);
         int[] userGuess = new int[4];
         int accurateGuess=0;
@@ -74,6 +76,7 @@ public class exeresice7 {
             }
         }
         System.out.println("You Have a "+accurateGuess+" accurate Guesses, and "+partialGuess+" partial Guesses");
+        return userGuess;
         }
         public static int routeSelection(){
         Scanner scanner=new Scanner(System.in);
@@ -102,6 +105,18 @@ public class exeresice7 {
             routeNumbers= random.nextInt(5,25);}
         return routeNumbers;
         }
+        public static boolean ifDoubleinGuess(int[] userGuess){
+        boolean ifDoubleanswer=false;
+            for(int i=0;i<userGuess.length;i++) {
+                for (int j = i + 1; j < userGuess.length; j++) {
+                    if (userGuess[i] == userGuess[j]) {
+                        ifDoubleanswer=true;}
+                    }
+                }
+            return ifDoubleanswer;
+            }
+
+
     }
 
 
