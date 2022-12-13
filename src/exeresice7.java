@@ -6,12 +6,45 @@ public class exeresice7 {
         int[] generatedCode=new int[4];
         int[] userGuessCode=new int[4];
         int routeNumbers=0;
+        int checkcode=0;
         boolean ifDouble=false;
+        boolean isSurprise=false;
         routeNumbers=routeSelection();
+        if(routeNumbers<0){
+            routeNumbers=(-routeNumbers);
+            isSurprise=true;
+        }
         generatedCode=lottery();
-        userGuessCode(generatedCode);
-        System.out.println(ifDouble=ifDoubleinGuess(userGuessCode));
-
+        for(int i=1; i<=routeNumbers;i++){
+            userGuessCode=(userGuessCode(generatedCode));
+            ifDouble=ifDoubleinGuess(userGuessCode);
+            if(ifDouble==true){
+                System.out.println("you entered same digit twice! Fined on two occasions ");
+                routeNumbers=routeNumbers-2;
+            }
+            for(int j=0; j< userGuessCode.length;j++) {
+                if (userGuessCode[j] != generatedCode[j]) {
+                    checkcode++;
+                }
+            }
+                if (checkcode == 0) {
+                    System.out.println("You WON!!! you guess the code " + generatedCode);
+                    break;
+                }
+                if ((checkcode > 0) && (isSurprise != true) && (routeNumbers > 0)) {
+                    System.out.println("You didnt guess the code, try again - " + (routeNumbers - i) + " route numbers are left");
+                    checkcode = 0;
+                }
+                if ((checkcode > 0) && (isSurprise == true) && (routeNumbers > 0)) {
+                    System.out.println("You didnt guess the code, try again");
+                    routeNumbers = routeNumbers - i;
+                    checkcode = 0;
+                }
+                if (routeNumbers < 0) {
+                    System.out.println("The code is " + generatedCode);
+                    System.out.println("You couldn't guess the code and you ran out of chances");
+                }
+        }
         }
     public static int[] lottery(){
         Random random=new Random();
@@ -44,14 +77,15 @@ public class exeresice7 {
     }
     public static int[] userGuessCode(int[] generatedCode) {
         Scanner scanner=new Scanner(System.in);
-        int[] userGuess = new int[4];
+        final int SIZE_ARRAY=4;
+        int[] userGuess = new int[SIZE_ARRAY];
         int accurateGuess=0;
         int partialGuess=0;
+        int tempSelection = -1;
             for (int i = 0; i < userGuess.length; i++) {
-                int tempSelection = -1;
                 boolean check=false;
                 do{
-                    int temp = i + 1;
+                    int temp=i+1;
                     System.out.println("Enter Number " + temp);
                     tempSelection = scanner.nextInt();
                     if (tempSelection >= 1 && tempSelection <= 6) {
@@ -102,7 +136,8 @@ public class exeresice7 {
         if(userChoice==3){
             routeNumbers=10;}
         if(userChoice==4){
-            routeNumbers= random.nextInt(5,25);}
+            routeNumbers= random.nextInt(5,25);
+            routeNumbers=(-routeNumbers);}
         return routeNumbers;
         }
         public static boolean ifDoubleinGuess(int[] userGuess){

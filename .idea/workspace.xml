@@ -59,7 +59,8 @@
       <workItem from="1670750569711" duration="12957000" />
       <workItem from="1670779472498" duration="5626000" />
       <workItem from="1670832231694" duration="11481000" />
-      <workItem from="1670853342072" duration="15822000" />
+      <workItem from="1670853342072" duration="15857000" />
+      <workItem from="1670915425813" duration="7654000" />
     </task>
     <task id="LOCAL‎-00001" summary="1">
       <created>1670320870016</created>
@@ -124,7 +125,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1670874475229</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎-00010" summary="1">
+      <created>1670877708874</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1670877708874</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +206,16 @@
           <url>file://$PROJECT_DIR$/src/exersice6.java</url>
           <line>15</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exeresice7.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/exeresice7.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StringIndexOutOfBoundsException" package="java.lang" />
