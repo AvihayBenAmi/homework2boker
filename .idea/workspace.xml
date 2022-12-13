@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb4f4b53-d142-4f1b-be83-80e57d23ab27" name="Changes" comment="1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/exeresice7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exeresice7.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +59,7 @@
       <workItem from="1670779472498" duration="5626000" />
       <workItem from="1670832231694" duration="11481000" />
       <workItem from="1670853342072" duration="15857000" />
-      <workItem from="1670915425813" duration="7654000" />
+      <workItem from="1670915425813" duration="7712000" />
     </task>
     <task id="LOCAL‎-00001" summary="1">
       <created>1670320870016</created>
@@ -132,7 +131,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1670877708874</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL‎-00011" summary="1">
+      <created>1670924288444</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL‎-00011" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1670924288444</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,12 +215,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/exeresice7.java</url>
-          <line>139</line>
+          <line>140</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/exeresice7.java</url>
-          <line>20</line>
+          <line>21</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">

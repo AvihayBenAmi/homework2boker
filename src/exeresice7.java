@@ -3,8 +3,9 @@ import java.util.Scanner;
 
 public class exeresice7 {
     public static void main(String[] args) {
-        int[] generatedCode=new int[4];
-        int[] userGuessCode=new int[4];
+        final int SIZR_ARRAY=4;
+        int[] generatedCode=new int[SIZR_ARRAY];
+        int[] userGuessCode=new int[SIZR_ARRAY];
         int routeNumbers=0;
         int checkcode=0;
         boolean ifDouble=false;
@@ -123,7 +124,7 @@ public class exeresice7 {
             System.out.println("1. Easy route - 20 opportunities");
             System.out.println("2. Medium route - 15 opportunities");
             System.out.println("3. hard route - 10 opportunities");
-            System.out.println("4. Surprising route - you dony know how many opportunities");
+            System.out.println("4. Surprising route - you dont know how many opportunities");
             userChoice = scanner.nextInt();
             if(userChoice<1||userChoice>4){
                 System.out.println("Wrong selection,please enter again");}
