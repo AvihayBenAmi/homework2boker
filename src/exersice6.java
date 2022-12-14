@@ -2,33 +2,47 @@ import java.util.Scanner;
 
 public class exersice6 {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        String quad=new String();
+        Scanner scanner = new Scanner(System.in);
+        String quad = new String();
         int a;
         int b;
         int c;
+        boolean checkIfValid = true;
         System.out.println("Enter your quadratic equation");
-        quad= scanner.nextLine();
-        validate(quad);
-        a=aParameter(quad);
-        b=bParameter(quad);
-        c=cParameter(quad);
-        calculate(quad,a,b,c);
-    }
-    public static boolean validate(String quad){
-        int indexx2=quad.indexOf("x^2");
-        String subs=quad.substring(indexx2+1,quad.length());
-        int indexx=subs.indexOf("x");
-        int index0=quad.indexOf("=0");
+        quad = scanner.nextLine();
+        //if (quad.length() >= 8) {
+            checkIfValid = validate(quad);
+            if (!checkIfValid) {
+                System.out.println("this is not valid quadratic equation");
+            } else {
+                a = aParameter(quad);
+                b = bParameter(quad);
+                c = cParameter(quad);
+                calculate(quad, a, b, c);
+            }
+        }
+        //else{
+            //System.out.println("this is not valid quadratic equation");
+        //}
+    //}
+    public static boolean validate(String quad) {
+        int indexx2 = quad.indexOf("x^2");
+        String subs = quad.substring(indexx2 + 1, quad.length());
+        int indexx = subs.indexOf("x");
+        int index0 = quad.indexOf("=0");
         char sign1;
         char sign2;
-        boolean check=true;
-        sign1=quad.charAt(indexx2+3);
-        sign2=subs.charAt(indexx+1);
-        if((index0==-1||indexx2==-1||indexx==-1)&&((sign1!='+')||(sign1!='-'))&&((sign2!='+')||(sign2!='-'))){
-            System.out.println("This is not Valid quardric equation");
-            check=false;
+        boolean check = true;
+        if (quad.length() >= 8) {
+            sign1 = quad.charAt(indexx2 + 3);
+            sign2 = subs.charAt(indexx + 1);
+            if ((index0 == -1 || indexx2 == -1 || indexx == -1) && ((sign1 != '+') || (sign1 != '-')) && ((sign2 != '+') || (sign2 != '-'))) {
+                System.out.println("This is not Valid quardric equation");
+                check = false;
+            }
         }
+        else{
+            check=false;}
         return check;
     }
     public static int aParameter(String quad) {
@@ -77,7 +91,7 @@ public class exersice6 {
     public static void calculate(String quad, int a, int b, int c){
         double pow=Math.pow(b,2);
         double sqrt = Math.sqrt(pow-(4*a*c));
-        if(sqrt<0){
+        if((sqrt<0)||Double.isNaN(sqrt)){
             System.out.println("There is no solutions for this quardric equation");
         }
         else{
