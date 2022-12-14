@@ -7,7 +7,8 @@ public class exersice4 {
     }
 
     public static int upAndDownArray(int newArray[]) {
-        int index = -1;
+        final int TOP=-1;
+        int index = TOP;
         boolean check = true;
         for (int i = 0; i < newArray.length - 1; i++) {
             if (newArray[i] < newArray[i + 1]) {
