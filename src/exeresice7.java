@@ -38,7 +38,7 @@ public class exeresice7 {
             if ((checkcode > 0) && (!isSurprise) && (routeNumbers > 0)) { //check if he is not won and he dont choose surprise mode and he is left route numbers
                 routeNumbers=routeNumbers-1;
                 if(routeNumbers != 0){ //check if left route numbers after turn
-                    System.out.println("You didnt guess the code, try again - " + (routeNumbers) + " route numbers are left");
+                    System.out.println("You didnt guess the code, try again. " + (routeNumbers) + " route numbers are left");
                 }
             }
             if ((checkcode > 0) && (isSurprise) && (routeNumbers > 0)) { ////check if he is not won and he  choose surprise mode and he is left route numbers
