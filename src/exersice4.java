@@ -12,7 +12,7 @@ public class exersice4 {
         boolean check = true;
         for (int i = 0; i < newArray.length - 1; i++) {
             if (newArray[i] < newArray[i + 1]) {
-                index = i + 1;
+                index = i + 1;//
             } else {
                 break;
             }
