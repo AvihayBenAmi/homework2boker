@@ -10,38 +10,38 @@ public class exeresice7 {
         int checkcode=0;
         boolean ifDouble=false;
         boolean isSurprise=false;
-        routeNumbers=routeSelection();
-        if(routeNumbers<0){
-            routeNumbers=(-routeNumbers);
+        routeNumbers=routeSelection(); //function for choose route number
+        if(routeNumbers<0){ //check if the user choose surprise route
+            routeNumbers=(-routeNumbers); //convert negative number to unlike from regular choose
             isSurprise=true;
         }
-        generatedCode=lottery();
+        generatedCode=lottery(); //function for lottery code
         do{
-            userGuessCode=(userGuessCode(generatedCode));
-            ifDouble=ifDoubleinGuess(userGuessCode);
+            userGuessCode=(userGuessCode(generatedCode)); //function for enter user code
+            ifDouble=ifDoubleinGuess(userGuessCode); //function for check if the user enter twice digits
             if(ifDouble){
                 System.out.println("you entered same digit twice! Fined on two occasions ");
-                routeNumbers=routeNumbers-2;
+                routeNumbers=routeNumbers-2; // fine user
             }
-            for(int j=0; j< userGuessCode.length;j++) {
+            for(int j=0; j< userGuessCode.length;j++) { //check if the generated code and the user guess code are equals
                 if (userGuessCode[j] != generatedCode[j]) {
                     checkcode++;
                 }
             }
-            if (checkcode == 0) {
+            if (checkcode == 0) { //check if the user is won
                 System.out.print("You WON!!! you guess the code ");
                 for(int i=0;i< generatedCode.length;i++){
                     System.out.print(generatedCode[i]);
                 }
                 break;
             }
-            if ((checkcode > 0) && (!isSurprise) && (routeNumbers > 0)) {
+            if ((checkcode > 0) && (!isSurprise) && (routeNumbers > 0)) { //check if he is not won and he dont choose surprise mode and he is left route numbers
                 routeNumbers=routeNumbers-1;
-                if(routeNumbers != 0){
+                if(routeNumbers != 0){ //check if left route numbers after turn
                     System.out.println("You didnt guess the code, try again - " + (routeNumbers) + " route numbers are left");
                 }
             }
-            if ((checkcode > 0) && (isSurprise) && (routeNumbers > 0)) {
+            if ((checkcode > 0) && (isSurprise) && (routeNumbers > 0)) { ////check if he is not won and he  choose surprise mode and he is left route numbers
                 System.out.println("You didnt guess the code, try again");
                 routeNumbers=routeNumbers-1;
             }
@@ -49,9 +49,9 @@ public class exeresice7 {
 
         }
         while(routeNumbers>0);
-        if (routeNumbers <= 0) {
+        if (routeNumbers <= 0) { //check if dont left route numbers
             System.out.print("The code is ");
-            for(int i=0;i< generatedCode.length;i++) {
+            for(int i=0;i< generatedCode.length;i++) { //print the generated code
                 System.out.print(generatedCode[i]);
             }
             System.out.println();
@@ -64,17 +64,17 @@ public class exeresice7 {
         int[] code=new int[SIZE_ARRAY];
         boolean check=true;
         do{
-            for(int k=0; k< code.length;k++){
+            for(int k=0; k< code.length;k++){ //lottery numbers for array
                 code[k]= random.nextInt(1,6);
                 check=true;
             }
-            for(int i=0; i< code.length;i++){
+            for(int i=0; i< code.length;i++){ //second check if the code is illegal for return to lottery
                 if(check==false){
                     break;}
                 else{
                     check=true;
                 }
-                    for(int j=i+1; j< code.length;j++){
+                    for(int j=i+1; j< code.length;j++){ //firs check if the code is legal
                         if(code[i]!=code[j]){
                             check=true;}
                         else{
@@ -90,7 +90,7 @@ public class exeresice7 {
     public static boolean ifDoubleinGuess(int[] userGuess){
         boolean ifDoubleanswer=false;
         for(int i=0;i<userGuess.length;i++) {
-            for (int j = i + 1; j < userGuess.length; j++) {
+            for (int j = i + 1; j < userGuess.length; j++) { //check id the user enter digit twice
                 if (userGuess[i] == userGuess[j]) {
                     ifDoubleanswer=true;}
             }
@@ -108,12 +108,12 @@ public class exeresice7 {
         boolean checkVal1 = false;
         do {
             System.out.println("Enter 4 digits guess code, each digit is between 1-6");
-            tempSelection = scanner.nextInt();
-            if ((tempSelection >= 1111) && (tempSelection <= 6666)) {
-                for (int s = tempArray.length - 1; s >= 0; s--) {
+            tempSelection = scanner.nextInt(); //scan a 4 digits numbers from user
+            if ((tempSelection >= 1111) && (tempSelection <= 6666)) { //check validate 1 (num is 4 digit)
+                for (int s = tempArray.length - 1; s >= 0; s--) { //convert the int to array
                     tempArray[s] = tempSelection % 10;
                     tempSelection = tempSelection / 10;
-                    if (tempArray[s] >= 1 && tempArray[s] <= 6) {
+                    if (tempArray[s] >= 1 && tempArray[s] <= 6) { //if all the numbers is valid, transfer to new array
                         checkVal1 = true;
                         userGuess[s] = tempArray[s];
                     } else {
@@ -128,7 +128,7 @@ public class exeresice7 {
             }
         }
         while (!checkVal1);
-        boolean answer = ifDoubleinGuess(userGuess);
+        boolean answer = ifDoubleinGuess(userGuess); //if the array is valid, check the accurate guesses and partial guesses
         if (!answer) {
             for (int i = 0; i < userGuess.length; i++) {
                 if (userGuess[i] == generatedCode[i]) {
@@ -161,7 +161,7 @@ public class exeresice7 {
             System.out.println("3. hard route - 10 opportunities");
             System.out.println("4. Surprising route - you dont know how many opportunities");
             userChoice = scanner.nextInt();
-            if(userChoice<1||userChoice>4){
+            if(userChoice<1||userChoice>4){ //check validate
                 System.out.println("Wrong selection,please enter again");}
         }
         while(userChoice<1||userChoice>4);
@@ -173,7 +173,7 @@ public class exeresice7 {
             routeNumbers=10;}
         if(userChoice==4){
             routeNumbers= random.nextInt(5,25);
-            routeNumbers=(-routeNumbers);}
+            routeNumbers=(-routeNumbers);} //if the user check 4, the function is distinguishing fron regular choose with minus symbol.
         return routeNumbers;
     }
 }
